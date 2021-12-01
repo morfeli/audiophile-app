@@ -1,0 +1,83 @@
+@import "../../../styles/partials.scss";
+
+.toggleButton {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  margin-top: 0.65rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  z-index: 100;
+}
+
+.label input[type="checkbox"] {
+  display: none;
+  visibility: hidden;
+}
+
+.middle {
+  height: 3px;
+  width: 1.875rem;
+  background-color: white;
+  border-radius: 3.125rem;
+  position: absolute;
+  transition: 0.3s ease;
+}
+
+.top {
+  bottom: 5px;
+  height: 3px;
+  width: 1.875rem;
+  background-color: white;
+  border-radius: 3.125rem;
+  position: absolute;
+  transition: 0.3s ease;
+}
+
+.bottom {
+  top: 10px;
+  height: 3px;
+  width: 1.875rem;
+  background-color: white;
+  border-radius: 3.125rem;
+  position: absolute;
+  transition: 0.3s ease;
+}
+
+.label input[type="checkbox"]:checked ~ .toggleButton .top {
+  transform: rotate(-50deg);
+  width: 1.56rem;
+  transform-origin: right;
+  top: -10px;
+  background-color: white;
+}
+
+.label input[type="checkbox"]:checked ~ .toggleButton .bottom {
+  transform: rotate(50deg);
+  width: 1.56rem;
+  transform-origin: right;
+  top: 10px;
+  background-color: white;
+}
+
+.label input[type="checkbox"]:checked ~ .toggleButton .middle {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+@media (max-width: 767px) {
+  .toggleButton {
+    display: flex;
+  }
+}
+
+.label {
+  @include tablet {
+    display: none;
+  }
+}
