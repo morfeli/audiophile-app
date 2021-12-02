@@ -1,0 +1,46 @@
+@import "../../../styles/partials";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  background-image: url("../../../assets/home/mobile/image-speaker-zx7.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20rem;
+  width: 327px;
+  height: 320px;
+  border-radius: 25px;
+  margin: 0 auto;
+}
+
+.section h1 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  letter-spacing: 2px;
+  font-size: 28px;
+}
+
+.section button {
+  width: 160px;
+  height: 48px;
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.section button:hover {
+  background-color: black;
+  color: white;
+}
+
+.section div {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-evenly;
+  position: relative;
+  left: 20px;
+}

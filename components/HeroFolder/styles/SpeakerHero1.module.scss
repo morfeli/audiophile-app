@@ -1,0 +1,67 @@
+@import "../../../styles/partials";
+
+.section {
+  width: 327px;
+  height: 600px;
+  background-color: $darkorange;
+  margin: 0 auto;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: url("../../../assets/home/desktop/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 300%;
+  background-size: 40rem;
+  border-radius: 25px;
+}
+
+.imgDiv {
+  @include mobile {
+    width: 179px;
+    height: 207px;
+    // position: relative;
+    // top: 85px;
+  }
+}
+
+.section h1 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  color: white;
+  font-size: 45px;
+  letter-spacing: 1.29px;
+  line-height: 50px;
+  width: 280px;
+  height: 80px;
+  text-align: center;
+}
+
+.section p {
+  font-family: $manrope;
+  font-weight: $fontmed;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  width: 280px;
+}
+
+.section button {
+  width: 160px;
+  height: 48px;
+  background-color: black;
+  color: white;
+  font-family: $manrope;
+  font-weight: $fontmed;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.section button:hover {
+  background-color: white;
+  color: black;
+}

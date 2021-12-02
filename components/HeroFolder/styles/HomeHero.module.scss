@@ -1,0 +1,68 @@
+@import "../../../styles/partials";
+
+.heroHome {
+  background-image: url("../../../assets/home/mobile/image-header.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.heroHome div {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.heroHome h2 {
+  font-family: $manrope;
+  font-weight: $fontreg;
+  font-size: 14px;
+  letter-spacing: 10px;
+  color: $lightgray;
+  text-transform: uppercase;
+}
+
+.heroHome h1 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  font-size: 36px;
+  color: white;
+}
+
+.heroHome p {
+  font-family: $manrope;
+  font-weight: $fontmed;
+  font-size: 15px;
+  line-height: 25px;
+  color: $lightgray;
+  width: 328px;
+}
+
+.heroHome button {
+  width: 160px;
+  height: 48px;
+  background-color: $darkorange;
+  color: white;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  font-family: $manrope;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.heroHome button:hover {
+  background-color: $lightorange;
+}

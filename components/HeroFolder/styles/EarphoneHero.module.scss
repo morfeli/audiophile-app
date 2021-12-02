@@ -1,0 +1,61 @@
+@import "../../../styles/partials";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 424px;
+  margin-top: 2rem;
+}
+
+.divOne {
+  @include mobile {
+    width: 327px;
+    height: 200px;
+    background-image: url("../../../assets/product-yx1-earphones/mobile/image-gallery-2.jpg");
+    background-repeat: no-repeat;
+    background-position: 40% center;
+    background-size: 30rem;
+    border-radius: 25px;
+  }
+}
+
+.divTwo {
+  margin-top: 2rem;
+  border-radius: 25px;
+  width: 327px;
+  height: 200px;
+  background-color: $gray;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.divTwo h1 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  letter-spacing: 2px;
+  font-size: 28px;
+  position: relative;
+  left: 10px;
+}
+
+.divTwo button {
+  width: 160px;
+  height: 48px;
+  font-family: $manrope;
+  font-weight: $fontbold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  left: 10px;
+  background-color: transparent;
+  transition: background-color 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.divTwo button:hover {
+  background-color: black;
+  color: white;
+}
