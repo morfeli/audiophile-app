@@ -6,6 +6,7 @@ import SpeakerHero1 from "../components/HeroFolder/SpeakerHero";
 import SpeakerHero2 from "../components/HeroFolder/SpeakerHero2";
 import EarphoneHero from "../components/HeroFolder/EarphoneHero";
 import BestHero from "../components/HeroFolder/BestHero";
+import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <SpeakerHero2 />
       <EarphoneHero />
       <BestHero />
+      <Footer />
     </Fragment>
   );
 }
