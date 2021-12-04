@@ -2,24 +2,24 @@ import { Fragment } from "react";
 import path from "path";
 import fs from "fs/promises";
 import Header from "../../components/Header/Header";
+import Speakers from "../../components/Header/Speakers";
 import Footer from "../../components/Footer/Footer";
-import Headphones from "../../components/Header/Headphones";
-import HeadphoneCards from "../../components/DataCards/HeadphoneCards";
-import LinkCards from "../../components/LinkCards/LinkCards";
 import BestHero from "../../components/HeroFolder/BestHero";
+import LinkCards from "../../components/LinkCards/LinkCards";
+import SpeakerCards from "../../components/DataCards/SpeakerCards";
 
-const HeadphonesPage = (props) => {
+const SpeakersPage = (props) => {
   const { products } = props;
   return (
     <Fragment>
       <Header />
-      <Headphones />
+      <Speakers />
       <ul>
         {products.map((item) => (
-          <HeadphoneCards
+          <SpeakerCards
             key={item.id}
             id={item.id}
-            image={item.image.mobile}
+            src={item.image.mobile}
             name={item.name}
             description={item.description}
             new={item.new}
@@ -28,7 +28,6 @@ const HeadphonesPage = (props) => {
       </ul>
       <LinkCards />
       <BestHero />
-
       <Footer />
     </Fragment>
   );
@@ -38,14 +37,14 @@ export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data.json");
   const jsonData = await fs.readFile(filePath);
   const data = JSON.parse(jsonData);
-  const headphoneData = data.slice(1, 4);
-  const revHeadPhoneData = headphoneData.reverse();
+  const slicedData = data.slice(4);
+  const speakerData = slicedData.reverse();
 
   return {
     props: {
-      products: revHeadPhoneData,
+      products: speakerData,
     },
   };
 }
 
-export default HeadphonesPage;
+export default SpeakersPage;
