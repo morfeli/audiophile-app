@@ -19,6 +19,7 @@ const SpeakersPage = (props) => {
           <SpeakerCards
             key={item.id}
             id={item.id}
+            slug={item.slug}
             src={item.image.mobile}
             name={item.name}
             description={item.description}

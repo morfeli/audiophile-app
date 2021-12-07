@@ -1,0 +1,56 @@
+@import "../../../styles/partials";
+
+.liContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 700px;
+  justify-content: space-evenly;
+
+  margin: 0 auto;
+  text-align: center;
+}
+
+.liContainer span {
+  font-family: $manrope;
+  font-weight: $fontreg;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: $darkorange;
+}
+
+.liContainer h1 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.liContainer p {
+  font-family: $manrope;
+  font-weight: $fontmed;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  margin: 0 auto;
+  width: 327px;
+}
+
+.liContainer button {
+  width: 160px;
+  height: 48px;
+  background-color: $darkorange;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.liContainer button:hover {
+  background-color: $lightorange;
+}

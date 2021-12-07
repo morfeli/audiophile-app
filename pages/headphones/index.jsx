@@ -19,7 +19,8 @@ const HeadphonesPage = (props) => {
           <HeadphoneCards
             key={item.id}
             id={item.id}
-            image={item.image.mobile}
+            slug={item.slug}
+            category={item.category}
             name={item.name}
             description={item.description}
             new={item.new}

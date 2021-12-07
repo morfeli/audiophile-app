@@ -1,16 +1,14 @@
-import Image from "next/image";
 import Link from "next/link";
+import styles from "./styles/DataCards.module.scss";
 
 const HeadphoneCards = (props) => {
   return (
-    <li id={props.id}>
-      <div>
-        <Image src={props.image} width={300} height={300} />
-      </div>
-      {props.new ? <p>New Product</p> : null}
+    <li id={props.id} className={styles.liContainer}>
+      <div id={props.slug} />
+      {props.new ? <span>New Product</span> : null}
       <h1>{props.name}</h1>
       <p>{props.description}</p>
-      <Link href="/">
+      <Link href={`/${props.category}/${props.slug}`}>
         <button>See Product</button>
       </Link>
     </li>

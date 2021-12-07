@@ -1,0 +1,103 @@
+@import "../../../styles/partials";
+
+.liContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.newProduct {
+  font-family: $manrope;
+  font-weight: $fontreg;
+  text-transform: uppercase;
+  color: $darkorange;
+  letter-spacing: 14px;
+}
+
+.liContainer h1 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  font-size: 28px;
+  letter-spacing: 1px;
+  width: 327px;
+}
+
+.liContainer p {
+  font-family: $manrope;
+  font-weight: $fontmed;
+  font-size: 15px;
+  line-height: 25px;
+  width: 327px;
+}
+
+.featuresBox {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  justify-content: space-around;
+}
+
+.featuresBox h2 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 0.86px;
+  line-height: 48px;
+}
+
+.featuresBox p {
+  font-family: $manrope;
+  font-weight: $fontreg;
+  font-size: 15px;
+}
+
+.inTheBox {
+  width: 327px;
+  height: 217px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.inTheBox h2 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.productBox {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  height: 375px;
+  justify-content: space-between;
+}
+
+.price {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  font-size: 18px;
+}
+
+.addToCart {
+  width: 160px;
+  height: 48px;
+  background-color: $darkorange;
+  color: white;
+  font-family: $manrope;
+  text-transform: uppercase;
+  border: none;
+}
+
+.quantityBtn {
+  width: 160px;
+  height: 48px;
+  background-color: $darkorange;
+  color: white;
+  font-family: $manrope;
+  text-transform: uppercase;
+  border: none;
+}

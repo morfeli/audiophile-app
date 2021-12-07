@@ -19,9 +19,10 @@ const EarphonesPage = (props) => {
           <EarphoneCards
             key={item.id}
             id={item.id}
-            image={item.image.mobile}
+            slug={item.slug}
             name={item.name}
             description={item.description}
+            category={item.category}
             new={item.new}
           />
         ))}
