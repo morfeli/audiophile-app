@@ -14,20 +14,25 @@ const EarphoneProductDetailsPage = (props) => {
   return (
     <Fragment>
       <Header />
-      <ul>
+      <ul
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         {loadedProduct.map((item) => (
           <DetailCard
             key={item.id}
             id={item.id}
+            slug={item.slug}
             name={item.name}
             description={item.description}
             price={item.price}
             features={item.features}
             includes={item.includes}
-            galleryFirst={item.gallery.first.mobile}
-            gallerySecond={item.gallery.second}
-            galleryThird={item.gallery.third}
             new={item.new}
+            others={item.others}
           />
         ))}
       </ul>
@@ -39,7 +44,7 @@ const EarphoneProductDetailsPage = (props) => {
 };
 
 async function getData() {
-  const filePath = path.join(process.cwd(), "data.json");
+  const filePath = path.join(process.cwd(), "public", "data.json");
   const jsonData = await fs.readFile(filePath);
   const data = JSON.parse(jsonData);
   const earphoneData = data.slice(0, 1);

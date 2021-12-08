@@ -8,7 +8,7 @@ const SpeakerCards = (props) => {
       {props.new ? <span>New Product</span> : null}
       <h1>{props.name}</h1>
       <p>{props.description}</p>
-      <Link href="/">
+      <Link href={`/${props.category}/${props.slug}`}>
         <button>See Product</button>
       </Link>
     </li>

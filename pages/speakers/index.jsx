@@ -24,6 +24,7 @@ const SpeakersPage = (props) => {
             name={item.name}
             description={item.description}
             new={item.new}
+            category={item.category}
           />
         ))}
       </ul>
@@ -35,7 +36,7 @@ const SpeakersPage = (props) => {
 };
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "data.json");
+  const filePath = path.join(process.cwd(), "public", "data.json");
   const jsonData = await fs.readFile(filePath);
   const data = JSON.parse(jsonData);
   const slicedData = data.slice(4);

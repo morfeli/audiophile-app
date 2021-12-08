@@ -35,7 +35,7 @@ const EarphonesPage = (props) => {
 };
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "data.json");
+  const filePath = path.join(process.cwd(), "public", "data.json");
   const jsonData = await fs.readFile(filePath);
   const data = JSON.parse(jsonData);
   const earphoneData = data.slice(0, 1);

@@ -1,0 +1,31 @@
+@import "../../../styles/partials";
+
+.liContainer {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  justify-content: space-between;
+}
+
+.liContainer h2 {
+  text-transform: uppercase;
+  font-family: $manrope;
+  font-weight: $fontbold;
+}
+
+.liContainer button {
+  width: 160px;
+  height: 48px;
+  background-color: $darkorange;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.5s ease-in-out;
+  cursor: pointer;
+  font-family: $manrope;
+}

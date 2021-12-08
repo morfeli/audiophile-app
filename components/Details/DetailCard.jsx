@@ -1,23 +1,44 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import styles from "./styles/DetailCard.module.scss";
 import InTheBox from "./InTheBox";
 import MinusIcon from "./MinusSVG";
+import PlusSVG from "./PlusSVG";
+
+import MayLike from "./MayLike";
 
 const DetailCard = (props) => {
+  const router = useRouter();
   const { includes } = props;
+  const { others } = props;
+
   const [quantity, setQuantity] = useState(1);
+
+  const incrementQuantityHandler = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const decrementQuantityHandler = () => {
+    setQuantity(quantity === 1 ? 1 : quantity - 1);
+  };
 
   return (
     <li className={styles.liContainer}>
+      <button className={styles.goBackBtn} onClick={() => router.back()}>
+        Go Back
+      </button>
+      <div id={props.slug} />
       <div className={styles.productBox}>
         {props.new ? <p className={styles.newProduct}>New Product</p> : null}
         <h1>{props.name}</h1>
         <p className={styles.description}>{props.description}</p>
         <p className={styles.price}>$ {props.price}</p>
-        <div className={styles.buttonBox}>
+        <div className={styles.btnBox}>
           <button className={styles.quantityBtn}>
-            <MinusIcon />
-            {quantity}
+            <MinusIcon onClick={decrementQuantityHandler} />
+
+            <span>{quantity}</span>
+            <PlusSVG onClick={incrementQuantityHandler} />
           </button>
           <button className={styles.addToCart}>Add to cart</button>
         </div>
@@ -31,6 +52,25 @@ const DetailCard = (props) => {
         <ul>
           {includes.map((item, i) => (
             <InTheBox key={i} quantity={item.quantity} item={item.item} />
+          ))}
+        </ul>
+      </div>
+      <div>
+        <div id={props.slug} className="firstImg" />
+        <div id={props.slug} className="secondImg" />
+        <div id={props.slug} className="thirdImg" />
+      </div>
+      <div>
+        <h1>You May Also Like</h1>
+        <ul>
+          {others.map((item, i) => (
+            <MayLike
+              key={i}
+              slug={item.slug}
+              name={item.name}
+              id={i}
+              category={item.category}
+            />
           ))}
         </ul>
       </div>

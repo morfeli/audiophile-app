@@ -1,0 +1,11 @@
+@import "../../../styles/partials";
+
+.svg {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.svg:hover path {
+  fill: $darkorange;
+}

@@ -1,6 +1,10 @@
-function MinusIcon() {
+import styles from "./styles/SVG.module.scss";
+
+function MinusIcon(props) {
   return (
     <svg
+      onClick={props.onClick}
+      className={styles.svg}
       xmlns="http://www.w3.org/2000/svg"
       data-name="Livello 1"
       viewBox="0 0 128 128"
