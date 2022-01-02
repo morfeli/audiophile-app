@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import {useContext} from "react";
+
 import styles from "./styles/DetailCard.module.scss";
 import InTheBox from "./InTheBox";
 import MinusIcon from "./MinusSVG";
