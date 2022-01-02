@@ -9,8 +9,7 @@ import MayLike from "./MayLike";
 
 const DetailCard = (props) => {
   const router = useRouter();
-  const { includes } = props;
-  const { others } = props;
+  const { includes, others } = props;
 
   const [quantity, setQuantity] = useState(1);
 
@@ -55,12 +54,12 @@ const DetailCard = (props) => {
           ))}
         </ul>
       </div>
-      <div>
+      <div className={styles.imgBox}>
         <div id={props.slug} className="firstImg" />
         <div id={props.slug} className="secondImg" />
         <div id={props.slug} className="thirdImg" />
       </div>
-      <div>
+      <div className={styles.mayLikeBox}>
         <h1>You May Also Like</h1>
         <ul>
           {others.map((item, i) => (

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import ArrowSVG from "./ArrowSVG";
 import styles from "./styles/LinkCard.module.scss";
 
 const LinkCard = (props) => {
   return (
-    <Link href={props.id}>
+    <Link href={`/${props.id}`} replace>
       <li id={props.id} className={styles.linkContainer}>
         <Image
           src={props.src}
