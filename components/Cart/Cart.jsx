@@ -18,11 +18,11 @@ const Cart = ({ show, onCloseModal }) => {
   }, 0);
 
   const cartItemRemoveHandler = (id) => {
-    storeCtx.removeItem(id);
+    storeCtx.removeItemFromCart(id);
   };
 
   const cartItemAddHandler = (item) => {
-    storeCtx.addItem({ ...item, amount: 1 });
+    storeCtx.addItemToCart({ ...item, amount: 1 });
   };
 
   const clearCartHandler = () => {
@@ -42,10 +42,17 @@ const Cart = ({ show, onCloseModal }) => {
           price={item.price}
           amount={item.amount}
           slug={item.slug}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
+          onAdd={cartItemAddHandler.bind(null, item)}
         />
       ))}
     </ul>
   );
+
+  const checkoutBtn =
+    storeCtx.items.length > 0 ? (
+      <button className={styles.checkoutBtn}>CHECKOUT</button>
+    ) : null;
 
   let modalContent = show ? (
     <div className={styles.overlay}>
@@ -62,7 +69,7 @@ const Cart = ({ show, onCloseModal }) => {
           <span>{totalAmount}</span>
         </div>
         <div className={styles.btnBox}>
-          <button className={styles.checkoutBtn}>CHECKOUT</button>
+          {checkoutBtn}
           <button className={styles.closeBtn} onClick={onCloseModal}>
             CLOSE
           </button>

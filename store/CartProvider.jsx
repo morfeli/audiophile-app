@@ -8,56 +8,48 @@ const initialCartState = {
 
 const reducerFN = (state, action) => {
   if (action.type === "ADD") {
-    const updatedItems = state.items.concat(action.item);
     const updatedTotalAmount =
       state.totalAmount + action.item.price * action.item.amount;
+
+    const existingCartItemIndex = state.items.findIndex(
+      (item) => item.id === action.item.id
+    );
+
+    let exisitingItem = state.items[existingCartItemIndex];
+
+    let updatedItems;
+
+    if (exisitingItem) {
+      let updatedItem = {
+        ...exisitingItem,
+        amount: exisitingItem.amount + action.item.amount,
+      };
+      updatedItems = [...state.items];
+      updatedItems[existingCartItemIndex] = updatedItem;
+    } else {
+      updatedItems = state.items.concat(action.item);
+    }
+
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
     };
-
-    // let exisitingCartItemIndex = state.items.findIndex((item) => {
-    //   item.id === action.item.id;
-    // });
-    // let exisitingCartItem = state.items[exisitingCartItemIndex];
-
-    // let updatedItems;
-    // if (exisitingCartItem) {
-    //   let updatedItem = {
-    //     ...exisitingCartItem,
-    //     amount: exisitingCartItem.amount + action.item.amount,
-    //   };
-    //   updatedItems = [...state.items];
-    //   updatedItems[exisitingCartItemIndex] = updatedItem;
-    // } else {
-    //   updatedItems = state.items.concat(action.item);
-    //   // Use concat to set state in a nonmutable way. We dont want to push to the exisiting state snapshot. Concat returns a new array.
-    // }
   }
 
   if (action.type == "REMOVE") {
-    let exisitingCartItemIndex = state.items.findIndex((item) => {
-      item.id === action.id;
-    });
-    let exisitingCartItem = state.items[exisitingCartItemIndex];
-
-    let updatedTotalAmount = state.totalAmount - exisitingCartItem.price;
-
+    const existingCartItemIndex = state.items.findIndex(
+      (item) => item.id === action.id
+    );
+    const existingItem = state.items[existingCartItemIndex];
+    const updatedTotalAmount = state.totalAmount - existingItem.price;
     let updatedItems;
-    if (exisitingCartItem.amount === 1) {
-      updatedItems = state.items.filter((item) => {
-        item.id != action.id;
-      });
+    if (existingItem.amount === 1) {
+      updatedItems = state.items.filter((item) => item.id !== action.id);
     } else {
-      let updatedItem = {
-        ...exisitingCartItem,
-        amount: exisitingCartItem.amount - 1,
-      };
-
+      const updatedItem = { ...existingItem, amount: existingItem.amount - 1 };
       updatedItems = [...state.items];
-      updatedItems[exisitingCartItemIndex] = updatedItem;
+      updatedItems[existingCartItemIndex] = updatedItem;
     }
-
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
@@ -84,7 +76,7 @@ const CartProvider = (props) => {
   };
 
   const removeItemFromCartHandler = (id) => {
-    dispatchCartState({ type: "REMOVE", item: id });
+    dispatchCartState({ type: "REMOVE", id: id });
   };
 
   const clearCartHandler = () => {
