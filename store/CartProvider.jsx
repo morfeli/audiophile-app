@@ -1,105 +1,109 @@
-import {useReducer, useState} from "react";
-import {CartContext} from "./cart-context"
+import { useReducer } from "react";
+import CartContext from "./cart-context";
 
 const initialCartState = {
-    items: [],
-    totalAmount: 0
-}
-
+  items: [],
+  totalAmount: 0,
+};
 
 const reducerFN = (state, action) => {
-    if (action.type == "ADD") {
-
-        let updatedTotalAmount = state.totalAmount + (action.item.price * action.item.amount);
-
-        let exisitingCartItemIndex = state.items.findIndex((item) => {item.id === action.item.id});
-        let exisitingCartItem = state.items[exisitingCartItemIndex];
-
-        let updatedItems;
-        if (exisitingCartItem) {
-            let updatedItem = {
-                ...exisitingCartItem,
-                amount: exisitingCartItem.amount + action.item.amount;
-            }
-            updatedItems = [...state.items];
-            updatedItems[exisitingCartItemIndex] = updatedItem;
-        } else {
-            updatedItems = state.items.concat(action.item);
-        }
-
-        return {
-            items: updatedItems,
-            totalAmount: updatedTotalAmount;
-        }
+  if (action.type === "ADD") {
+    const updatedItems = state.items.concat(action.item);
+    const updatedTotalAmount =
+      state.totalAmount + action.item.price * action.item.amount;
+    return {
+      items: updatedItems,
+      totalAmount: updatedTotalAmount,
     };
 
-    if (action.type == "REMOVE") {
+    // let exisitingCartItemIndex = state.items.findIndex((item) => {
+    //   item.id === action.item.id;
+    // });
+    // let exisitingCartItem = state.items[exisitingCartItemIndex];
 
-        let exisitingCartItemIndex = state.items.findIndex((item) => {item.id === action.id});
-        let exisitingCartItem = state.items[exisitingCartItemIndex];
+    // let updatedItems;
+    // if (exisitingCartItem) {
+    //   let updatedItem = {
+    //     ...exisitingCartItem,
+    //     amount: exisitingCartItem.amount + action.item.amount,
+    //   };
+    //   updatedItems = [...state.items];
+    //   updatedItems[exisitingCartItemIndex] = updatedItem;
+    // } else {
+    //   updatedItems = state.items.concat(action.item);
+    //   // Use concat to set state in a nonmutable way. We dont want to push to the exisiting state snapshot. Concat returns a new array.
+    // }
+  }
 
-        let updatedTotalAmount = state.totalAmount - exisitingCartItem.price;
+  if (action.type == "REMOVE") {
+    let exisitingCartItemIndex = state.items.findIndex((item) => {
+      item.id === action.id;
+    });
+    let exisitingCartItem = state.items[exisitingCartItemIndex];
 
-        let updatedItems;   
-        if (exisitingCartItem.amount === 1) {
-          updatedItems = state.items.filter((item) => {
-                item.id != action.id
-            });
-        } else {
-            let updatedItem = {
-                ...exisitingCartItem,
-                amount: exisitingCartItem.amount - 1
-            }
+    let updatedTotalAmount = state.totalAmount - exisitingCartItem.price;
 
-            updatedItems = [...state.items];
-            updatedItems[exisitingCartItemIndex] = updatedItem;
-        }
+    let updatedItems;
+    if (exisitingCartItem.amount === 1) {
+      updatedItems = state.items.filter((item) => {
+        item.id != action.id;
+      });
+    } else {
+      let updatedItem = {
+        ...exisitingCartItem,
+        amount: exisitingCartItem.amount - 1,
+      };
 
-        return {
-            items: updatedItems,
-            totalAmount: updatedTotalAmount
-        }
-
-    };
-
-    if (action.type = "CLEAR") {
-        return initialCartState;
+      updatedItems = [...state.items];
+      updatedItems[exisitingCartItemIndex] = updatedItem;
     }
 
     return {
-        initialCartState;
-    }
+      items: updatedItems,
+      totalAmount: updatedTotalAmount,
+    };
+  }
 
+  if (action.type === "CLEAR") {
+    return initialCartState;
+  }
+
+  return {
+    initialCartState,
+  };
 };
 
-const CartProvider = () => {
-const [cartState, dispatchCartState] = useReducer(reducerFN, initialCartState);
+const CartProvider = (props) => {
+  const [cartState, dispatchCartState] = useReducer(
+    reducerFN,
+    initialCartState
+  );
 
-const addItemToCartHandler = (item) => {
-    dispatchCartState({type: "ADD", item : item})
-};
+  const addItemToCartHandler = (item) => {
+    dispatchCartState({ type: "ADD", item: item });
+  };
 
+  const removeItemFromCartHandler = (id) => {
+    dispatchCartState({ type: "REMOVE", item: id });
+  };
 
-const removeItemFromCartHandler = (id) => {
-    dispatchCartState({type: "REMOVE", item: id})
-};
+  const clearCartHandler = () => {
+    dispatchCartState({ type: "CLEAR" });
+  };
 
-const clearCartHandler = () => {
-    dispatchCartState({type: "CLEAR"})
-};
-
-
-const CartContext = {
-    items: updatedItems,
-    totalAmount: updatedTotalAmount,
+  const cartContext = {
+    items: cartState.items,
+    totalAmount: cartState.totalAmount,
     addItemToCart: addItemToCartHandler,
     removeItemFromCart: removeItemFromCartHandler,
-    clearCart: clearCartHandler
+    clearCart: clearCartHandler,
+  };
+
+  return (
+    <CartContext.Provider value={cartContext}>
+      {props.children}
+    </CartContext.Provider>
+  );
 };
 
-return (
-    <CartContext.Provider value={CartContext}>
-       {props.children}
-    </CartContext.Provider>
-)
-};
+export default CartProvider;

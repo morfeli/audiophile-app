@@ -1,0 +1,103 @@
+@import "../../../styles/partials";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 20vh;
+  left: 5%;
+  width: 90%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-down 300ms ease-in-out forwards;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.div1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.div1 h1 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  font-size: 18px;
+  letter-spacing: 1.29px;
+}
+
+.div1 button {
+  font-family: $manrope;
+  font-weight: $fontmed;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  cursor: pointer;
+}
+
+.div3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.div3 h4 {
+  font-family: $manrope;
+  font-weight: $fontmed;
+}
+
+.div3 span {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  color: black;
+}
+
+.btnBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkoutBtn {
+  background-color: $darkorange;
+  color: white;
+  width: 200px;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.closeBtn {
+  width: 65px;
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  outline: white;
+  cursor: pointer;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

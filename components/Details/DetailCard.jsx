@@ -1,26 +1,36 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import CartContext from "../../store/cart-context";
 import { useRouter } from "next/router";
-import {useContext} from "react";
 
 import styles from "./styles/DetailCard.module.scss";
+
+import MayLike from "./MayLike";
 import InTheBox from "./InTheBox";
 import MinusIcon from "./MinusSVG";
 import PlusSVG from "./PlusSVG";
 
-import MayLike from "./MayLike";
-
 const DetailCard = (props) => {
+  const cartCtx = useContext(CartContext);
   const router = useRouter();
+  const [amount, setAmount] = useState(1);
   const { includes, others } = props;
 
-  const [quantity, setQuantity] = useState(1);
-
   const incrementQuantityHandler = () => {
-    setQuantity(quantity + 1);
+    setAmount((current) => current + 1);
   };
 
   const decrementQuantityHandler = () => {
-    setQuantity(quantity === 1 ? 1 : quantity - 1);
+    setAmount((current) => (current === 1 ? 1 : current - 1));
+  };
+
+  const addToCartHandler = () => {
+    cartCtx.addItemToCart({
+      id: props.slug,
+      slug: props.slug,
+      name: props.name,
+      price: props.price,
+      amount: amount,
+    });
   };
 
   return (
@@ -37,11 +47,12 @@ const DetailCard = (props) => {
         <div className={styles.btnBox}>
           <button className={styles.quantityBtn}>
             <MinusIcon onClick={decrementQuantityHandler} />
-
-            <span>{quantity}</span>
+            <span>{amount}</span>
             <PlusSVG onClick={incrementQuantityHandler} />
           </button>
-          <button className={styles.addToCart}>Add to cart</button>
+          <button className={styles.addToCart} onClick={addToCartHandler}>
+            Add to cart
+          </button>
         </div>
       </div>
       <div className={styles.featuresBox}>

@@ -1,0 +1,34 @@
+@import "../../../styles/partials";
+
+.itemBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.div1 h3 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  font-size: 15px;
+}
+
+.div1 span {
+  font-family: $manrope;
+  font-weight: $fontbold;
+}
+
+.div2 button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 75px;
+  height: 25px;
+  background-color: $gray;
+  border: none;
+}
+
+.div2 span {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  color: $darkorange;
+}
