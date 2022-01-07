@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import ReactDOM from "react-dom";
 
 import CartContext from "../../store/cart-context";
@@ -8,6 +9,7 @@ import styles from "./styles/CartModal.module.scss";
 
 const Cart = ({ show, onCloseModal }) => {
   const [sendPortal, setSendPortal] = useState(false);
+  const router = useRouter();
 
   const storeCtx = useContext(CartContext);
 
@@ -27,6 +29,10 @@ const Cart = ({ show, onCloseModal }) => {
 
   const clearCartHandler = () => {
     storeCtx.clearCart();
+  };
+
+  const routeToCheckOutHandler = () => {
+    router.replace("/checkout");
   };
 
   useEffect(() => {
@@ -51,7 +57,9 @@ const Cart = ({ show, onCloseModal }) => {
 
   const checkoutBtn =
     storeCtx.items.length > 0 ? (
-      <button className={styles.checkoutBtn}>CHECKOUT</button>
+      <button onClick={routeToCheckOutHandler} className={styles.checkoutBtn}>
+        CHECKOUT
+      </button>
     ) : null;
 
   let modalContent = show ? (
