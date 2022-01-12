@@ -1,5 +1,6 @@
 import Header from "../../components/Header/Header";
-import Checkout from "../../components/Checkout/Checkout";
+import Checkout from "../../components/Checkout/Checkout.tsx";
+
 import Footer from "../../components/Footer/Footer";
 
 const CheckoutPage = () => {

@@ -4,4 +4,151 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: $gray;
+}
+
+.section button {
+  background: transparent;
+  border: none;
+  font-family: $manrope;
+  font-weight: $fontmed;
+  font-size: 1rem;
+  position: relative;
+  top: 10px;
+  left: 25px;
+  cursor: pointer;
+}
+
+.formBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 327px;
+  height: 1378px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  background-color: white;
+}
+
+.formBox h1 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.form h3 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  color: $darkorange;
+  font-size: 13px;
+  letter-spacing: 0.93px;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+
+.formDivOne {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.formDivTwo {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.formDivThree {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.formDivThree h4 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  font-size: 12px;
+  letter-spacing: -0.21px;
+}
+
+.formDivOne input {
+  width: 280px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.formDivTwo input {
+  width: 280px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.innerDiv label {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  justify-content: space-evenly;
+  font-family: $manrope;
+  font-weight: $fontbold;
+}
+
+.radioDiv label {
+  display: flex;
+  align-items: center;
+  width: 280px;
+  height: 56px;
+  border: solid 2px black;
+  border-radius: 8px;
+  font-family: $manrope;
+  font-weight: $fontbold;
+  font-size: 14px;
+}
+
+.radioDiv input {
+  margin-right: 10px;
+  margin-left: 1rem;
+}
+
+.btn {
+  width: 279px;
+  height: 48px;
+  background-color: $darkorange;
+  color: white;
+  font-family: $manrope;
+  font-weight: $fontmed;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-top: 3rem;
+  border: none;
+}
+
+.eMoneyDiv {
+  display: flex;
+  flex-direction: column;
+  height: 175px;
+  justify-content: space-around;
+  margin: 0 auto;
+  font-family: $manrope;
+  font-weight: $fontbold;
+}
+
+.eMoneyDiv input {
+  width: 280px;
+  height: 56px;
+  border-radius: 8px;
 }
