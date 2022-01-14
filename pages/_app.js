@@ -4,7 +4,7 @@ import CartProvider from "../store/CartProvider";
 function MyApp({ Component, pageProps }) {
   return (
     <CartProvider>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </CartProvider>
   );
 }

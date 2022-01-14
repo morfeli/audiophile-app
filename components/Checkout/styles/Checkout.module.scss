@@ -28,6 +28,7 @@
   margin-top: 2rem;
   background-color: white;
   position: relative;
+  border-radius: 12px;
 }
 
 .formBox h1 {
@@ -45,8 +46,11 @@
   margin: 0 auto;
 }
 
-.form input::placeholder {
+.form input {
   padding-left: 1rem;
+}
+
+.form input::placeholder {
   font-family: $manrope;
   font-weight: $fontmed;
 }
@@ -143,6 +147,7 @@
   border: none;
   position: relative;
   top: 400px;
+  cursor: pointer;
 }
 
 .eMoneyDiv {

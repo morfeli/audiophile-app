@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import ReactDOM from "react-dom";
 
 import CartContext from "../../store/cart-context";
@@ -64,7 +64,9 @@ const ThankYou = ({ show }) => {
             <p>${updatedGrandTotal}</p>
           </div>
         </div>
-        <button className={styles.homeBtn}>Back to Home</button>
+        <Link href="/">
+          <button className={styles.homeBtn}>Back to Home</button>
+        </Link>
       </div>
     </div>
   ) : null;
