@@ -97,16 +97,18 @@ const Checkout = () => {
   const [form, setForm] = useState<ContactInput>(intialFormState);
   const [eMoney, setMoney] = useState(null);
   const [cash, setCash] = useState(null);
-  // const [eMoneyNum, setEMoneyNum] = useState(null);
-  // const [eMoneyPin, setEMoneyPin] = useState(null);
 
   const [loading, setLoading] = useState(false);
-  const [confirmation, setConfirmation] = useState(null);
+  const [confirmation, setConfirmation] = useState(false);
 
   const router = useRouter();
 
   const goBackHandler = () => {
     router.back();
+  };
+
+  const closeModalHandler = () => {
+    setConfirmation((current) => !current);
   };
 
   const submitFormHandler = (e) => {

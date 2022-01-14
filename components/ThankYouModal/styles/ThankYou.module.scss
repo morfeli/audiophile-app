@@ -1,0 +1,109 @@
+@import "../../../styles/partials";
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 20vh;
+  left: 5%;
+  width: 90%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-down 300ms ease-in-out forwards;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.modal h1 {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  font-size: 2rem;
+  width: 263px;
+  letter-spacing: 0.86px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.modal p {
+  font-family: $manrope;
+  font-weight: $fontmed;
+  font-size: 15px;
+}
+
+.box {
+  width: 263px;
+  height: 232px;
+  margin: 0 auto;
+}
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  background-color: $gray;
+  width: 263px;
+  height: 120px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.grandTotal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 263px;
+  height: 92px;
+  margin: 0 auto;
+  background-color: black;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.grandTotal h2 {
+  font-family: $manrope;
+  font-weight: $fontmed;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: $lightgray;
+  margin-left: 1rem;
+}
+
+.grandTotal p {
+  font-family: $manrope;
+  font-weight: $fontbold;
+  font-size: 18px;
+  color: white;
+  margin-left: 1rem;
+}
+
+.homeBtn {
+  height: 48px;
+  text-transform: uppercase;
+  background-color: $darkorange;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+@import "../../../styles/partials";
+
+.li {
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  width: 240px;
+  margin-top: 1rem;
+}
+
+.li h2 {
+  font-family: $manrope;
+  font-weight: $fontmed;
+  font-size: 15px;
+}
