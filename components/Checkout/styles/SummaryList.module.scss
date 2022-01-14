@@ -1,0 +1,18 @@
+@import "../../../styles/partials";
+
+.li {
+  list-style: none;
+  display: flex;
+  width: 300px;
+  height: 50px;
+  justify-content: space-around;
+  align-items: baseline;
+  font-family: $manrope;
+}
+
+.innerBox {
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  justify-content: space-around;
+}

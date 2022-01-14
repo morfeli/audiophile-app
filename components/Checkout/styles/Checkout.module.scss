@@ -7,7 +7,7 @@
   background-color: $gray;
 }
 
-.section button {
+.goBackBtn {
   background: transparent;
   border: none;
   font-family: $manrope;
@@ -24,10 +24,10 @@
   flex-direction: column;
   align-items: flex-start;
   width: 327px;
-  height: 1378px;
   margin: 0 auto;
   margin-top: 2rem;
   background-color: white;
+  position: relative;
 }
 
 .formBox h1 {
@@ -43,6 +43,12 @@
   flex-direction: column;
   align-items: flex-start;
   margin: 0 auto;
+}
+
+.form input::placeholder {
+  padding-left: 1rem;
+  font-family: $manrope;
+  font-weight: $fontmed;
 }
 
 .form h3 {
@@ -124,7 +130,7 @@
   margin-left: 1rem;
 }
 
-.btn {
+.checkoutBtn {
   width: 279px;
   height: 48px;
   background-color: $darkorange;
@@ -135,6 +141,8 @@
   margin: 0 auto;
   margin-top: 3rem;
   border: none;
+  position: relative;
+  top: 350px;
 }
 
 .eMoneyDiv {
