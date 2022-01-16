@@ -1,0 +1,17 @@
+.linkCards {
+  display: flex;
+  flex-direction: column;
+  height: 900px;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 768px) {
+  .linkCards {
+    flex-direction: row;
+    height: 400px;
+    width: 730px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+}

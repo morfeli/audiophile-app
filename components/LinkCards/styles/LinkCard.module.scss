@@ -37,3 +37,9 @@
   width: 70px;
   margin: 0 auto;
 }
+
+@media (min-width: 768px) {
+  .linkContainer {
+    width: 210px;
+  }
+}

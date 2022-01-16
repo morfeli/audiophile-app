@@ -1,7 +1,9 @@
 import headphoneImg from "../../assets/product-xx99-mark-one-headphones/mobile/image-product.jpg";
 import speakerImg from "../../assets/product-zx9-speaker/mobile/image-product.jpg";
 import earphoneImg from "../../assets/product-yx1-earphones/mobile/image-product.jpg";
+
 import LinkCard from "./LinkCard";
+import styles from "./styles/LinkCards.module.scss";
 
 const cardArr = [
   {
@@ -23,14 +25,7 @@ const cardArr = [
 
 const LinkCards = () => {
   return (
-    <ul
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "900px",
-        justifyContent: "space-evenly",
-      }}
-    >
+    <ul className={styles.linkCards}>
       {cardArr.map((item) => (
         <LinkCard
           key={item.id}

@@ -45,3 +45,11 @@
   position: relative;
   left: 20px;
 }
+
+@media (min-width: 768px) {
+  .section {
+    width: 689px;
+    background-position: 400% 83%;
+    background-size: 43rem;
+  }
+}

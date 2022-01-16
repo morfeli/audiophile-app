@@ -59,3 +59,25 @@
   background-color: black;
   color: white;
 }
+
+@media (min-width: 768px) {
+  .section {
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    width: 689px;
+  }
+
+  .divOne {
+    width: 330px;
+    height: 300px;
+    border-radius: unset;
+  }
+
+  .divTwo {
+    width: 330px;
+    height: 256px;
+    border-radius: unset;
+    margin-top: unset;
+  }
+}

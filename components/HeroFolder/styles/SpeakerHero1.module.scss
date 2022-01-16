@@ -65,3 +65,9 @@
   background-color: white;
   color: black;
 }
+
+@media (min-width: 768px) {
+  .section {
+    width: 689px;
+  }
+}
