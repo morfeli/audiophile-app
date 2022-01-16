@@ -3,3 +3,11 @@
   bottom: 5px;
   left: 10px;
 }
+
+@media (min-width: 768px) {
+  .logo {
+    position: absolute;
+    bottom: 25px;
+    left: 80px;
+  }
+}

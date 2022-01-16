@@ -4,3 +4,9 @@
   left: 25px;
   cursor: pointer;
 }
+
+@media (min-width: 768px) {
+  .logo {
+    left: 150px;
+  }
+}

@@ -47,3 +47,9 @@
   font-size: 28px;
   margin: 0 auto;
 }
+
+@media (min-width: 768px) {
+  .header {
+    position: relative;
+  }
+}
