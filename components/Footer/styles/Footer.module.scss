@@ -10,8 +10,22 @@
   background-color: #101010;
   color: white;
   margin: 0 auto;
+  position: relative;
+  @include tablet {
+    height: 400px;
+  }
 }
 
+.footer ul {
+  @include tablet {
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+    margin-right: 14rem;
+    position: relative;
+    top: 10px;
+  }
+}
 .footer li {
   list-style: none;
   text-align: center;
@@ -29,6 +43,10 @@
   font-size: 15px;
   line-height: 25px;
   text-align: center;
+  @include tablet {
+    width: 689px;
+    text-align: left;
+  }
 }
 
 .footer div {
@@ -36,12 +54,28 @@
   align-items: center;
   width: 200px;
   justify-content: space-evenly;
+  @include tablet {
+    width: 150px;
+  }
 }
 
 .line {
   width: 101px;
-  height: 4px;
+  height: 5px;
   background-color: $darkorange;
   position: relative;
   bottom: 40px;
+  border: none;
+  @include tablet {
+    bottom: 40px;
+    right: 290px;
+  }
+}
+
+.iconBox {
+  @include tablet {
+    position: absolute;
+    bottom: 50px;
+    left: 600px;
+  }
 }

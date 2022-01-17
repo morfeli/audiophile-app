@@ -1,6 +1,6 @@
 import styles from "./styles/Footer.module.scss";
 import Link from "next/link";
-import Logo from "../Header/Logo";
+import FooterLogo from "./FooterLogo";
 import TwitterIcon from "./TwitterSVG";
 import MetaIcon from "./MetaSVG";
 import InstaIcon from "./InstaSVG";
@@ -8,8 +8,8 @@ import InstaIcon from "./InstaSVG";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.line} />
-      <Logo />
+      <hr className={styles.line} />
+      <FooterLogo />
       <ul>
         <Link href="/">
           <li>Home</li>
@@ -31,7 +31,7 @@ const Footer = () => {
         facility - we’re open 7 days a week.
       </p>
       <p>Copyright 2021. All Rights Reserved</p>
-      <div>
+      <div className={styles.iconBox}>
         <MetaIcon />
         <TwitterIcon />
         <InstaIcon />

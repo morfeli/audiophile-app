@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TabletImg from "../../assets/shared/tablet/image-best-gear.jpg";
 import bestImg from "../../assets/shared/mobile/image-best-gear.jpg";
 import styles from "./styles/BestHero.module.scss";
 
@@ -6,7 +7,10 @@ const BestHero = () => {
   return (
     <section className={styles.section}>
       <div className={styles.imgBox}>
-        <Image src={bestImg} />
+        <Image src={bestImg} className={styles.img} />
+      </div>
+      <div className={styles.imgBoxTablet}>
+        <Image src={TabletImg} className={styles.img} />
       </div>
       <div className={styles.textBox}>
         <h1>
