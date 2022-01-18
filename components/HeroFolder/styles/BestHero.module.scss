@@ -25,6 +25,19 @@
     display: flex;
     width: 689px;
   }
+  @include desktop {
+    display: none;
+  }
+}
+
+.imgBoxDesktop {
+  display: none;
+  @include desktop {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+  }
 }
 
 .img {
@@ -61,4 +74,25 @@
 
 .section span {
   color: $darkorange;
+}
+
+@media (min-width: 1440px) {
+  .section {
+    width: 1330px;
+    flex-direction: row-reverse;
+  }
+
+  .section h1 {
+    text-align: left;
+    font-size: 40px;
+    width: 400px;
+  }
+  .section p {
+    text-align: left;
+    width: 445px;
+  }
+
+  .imgDesktop {
+    border-radius: 15px;
+  }
 }

@@ -6,4 +6,9 @@
     top: 50px;
     left: 45px;
   }
+  @include desktop {
+    left: 75px;
+    bottom: 40px;
+    right: 595px;
+  }
 }

@@ -8,12 +8,14 @@ const SpeakerHero1 = () => {
       <div className={styles.imgDiv}>
         <Image src={speakerImg} layout="responsive" />
       </div>
-      <h1>ZX9 SPEAKER</h1>
-      <p>
-        Upgrade to premium speakers that are phenomenally built to deliver truly
-        remarkable sound.
-      </p>
-      <button>See Product</button>
+      <div className={styles.textBox}>
+        <h1>ZX9 SPEAKER</h1>
+        <p>
+          Upgrade to premium speakers that are phenomenally built to deliver
+          truly remarkable sound.
+        </p>
+        <button>See Product</button>
+      </div>
     </section>
   );
 };

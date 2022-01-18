@@ -70,6 +70,10 @@
     bottom: 50px;
     right: 290px;
   }
+  @include desktop {
+    bottom: 33px;
+    right: 600px;
+  }
 }
 
 .iconBox {
@@ -77,5 +81,25 @@
     position: absolute;
     bottom: 50px;
     left: 600px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    height: 365px;
+  }
+  .footer ul {
+    top: -16px;
+    left: 540px;
+  }
+
+  .footer p {
+    right: 300px;
+    top: -50px;
+    position: relative;
+  }
+
+  .iconBox {
+    position: relative;
   }
 }

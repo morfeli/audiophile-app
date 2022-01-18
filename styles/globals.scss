@@ -27,6 +27,12 @@
     background-position: 50% 46%;
     background-size: 33rem;
   }
+  @include desktop {
+    width: 700px;
+    height: 600px;
+    background-position: 50% 46%;
+    background-size: 36rem;
+  }
 }
 
 #xx59-headphones {
@@ -44,6 +50,12 @@
     width: 540px;
     background-position: 50% 46%;
     background-size: 33rem;
+  }
+  @include desktop {
+    width: 700px;
+    height: 600px;
+    background-position: 50% 46%;
+    background-size: 36rem;
   }
 }
 
@@ -63,19 +75,12 @@
     background-position: 50% 46%;
     background-size: 33rem;
   }
-}
-
-#xx99-mark-one-headphones {
-  background-image: url("../assets/product-xx99-mark-one-headphones/mobile/image-product.jpg");
-  width: 327px;
-  height: 320px;
-  background-repeat: no-repeat;
-  background-position: center;
-  object-fit: contain;
-  background-size: 20rem;
-  border-radius: 12px;
-  margin: 0 auto;
-  margin-top: 2rem;
+  @include desktop {
+    width: 700px;
+    height: 600px;
+    background-position: 50% 46%;
+    background-size: 36rem;
+  }
 }
 
 #xx99-mark-one-headphones {
@@ -93,6 +98,12 @@
     width: 540px;
     background-position: 50% 46%;
     background-size: 33rem;
+  }
+  @include desktop {
+    width: 700px;
+    height: 600px;
+    background-position: 50% 46%;
+    background-size: 36rem;
   }
 }
 
@@ -112,6 +123,12 @@
     background-position: 50% 46%;
     background-size: 33rem;
   }
+  @include desktop {
+    width: 700px;
+    height: 600px;
+    background-position: 50% 46%;
+    background-size: 36rem;
+  }
 }
 
 #zx7-speaker {
@@ -129,6 +146,12 @@
     width: 540px;
     background-position: 50% 46%;
     background-size: 33rem;
+  }
+  @include desktop {
+    width: 700px;
+    height: 600px;
+    background-position: 50% 46%;
+    background-size: 36rem;
   }
 }
 
@@ -496,5 +519,26 @@
     width: 200px;
     height: 350px;
     background-size: 35rem;
+  }
+}
+
+.productsUl li:nth-child(1) {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.productsUl li:nth-child(2) {
+  @include desktop {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.productsUl li:nth-child(3) {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
   }
 }
