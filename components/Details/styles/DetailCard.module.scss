@@ -93,7 +93,9 @@
 }
 
 .imgBox {
-  display: flex;
+  @include tablet {
+    display: flex;
+  }
 }
 
 .imgBoxTablet {
