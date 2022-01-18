@@ -22,6 +22,11 @@
   border-radius: 12px;
   margin: 0 auto;
   margin-top: 2rem;
+  @include tablet {
+    width: 540px;
+    background-position: 50% 46%;
+    background-size: 33rem;
+  }
 }
 
 #xx59-headphones {
@@ -35,6 +40,11 @@
   border-radius: 12px;
   margin: 0 auto;
   margin-top: 2rem;
+  @include tablet {
+    width: 540px;
+    background-position: 50% 46%;
+    background-size: 33rem;
+  }
 }
 
 #xx99-mark-two-headphones {
@@ -48,6 +58,11 @@
   border-radius: 12px;
   margin: 0 auto;
   margin-top: 2rem;
+  @include tablet {
+    width: 540px;
+    background-position: 50% 46%;
+    background-size: 33rem;
+  }
 }
 
 #xx99-mark-one-headphones {
@@ -74,6 +89,11 @@
   border-radius: 12px;
   margin: 0 auto;
   margin-top: 2rem;
+  @include tablet {
+    width: 540px;
+    background-position: 50% 46%;
+    background-size: 33rem;
+  }
 }
 
 #zx9-speaker {
@@ -87,6 +107,11 @@
   border-radius: 12px;
   margin: 0 auto;
   margin-top: 2rem;
+  @include tablet {
+    width: 540px;
+    background-position: 50% 46%;
+    background-size: 33rem;
+  }
 }
 
 #zx7-speaker {
@@ -100,6 +125,11 @@
   border-radius: 12px;
   margin: 0 auto;
   margin-top: 2rem;
+  @include tablet {
+    width: 540px;
+    background-position: 50% 46%;
+    background-size: 33rem;
+  }
 }
 
 #yx1-earphones.firstImg {
@@ -142,6 +172,11 @@
   background-size: 20rem;
   border-radius: 12px;
   margin: 0 auto;
+  @include tablet {
+    width: 200px;
+    height: 350px;
+    background-size: 40rem;
+  }
 }
 
 #xx59-headphones.secondOption {
@@ -155,6 +190,11 @@
   background-size: 20rem;
   border-radius: 12px;
   margin: 0 auto;
+  @include tablet {
+    width: 200px;
+    height: 350px;
+    background-size: 40rem;
+  }
 }
 
 #zx9-speaker.thirdOption {
@@ -167,6 +207,11 @@
   background-size: 20rem;
   border-radius: 12px;
   margin: 0 auto;
+  @include tablet {
+    width: 200px;
+    height: 350px;
+    background-size: 40rem;
+  }
 }
 
 #xx99-mark-two-headphones.firstImg {
@@ -206,6 +251,11 @@
   border-radius: 12px;
   margin: 0 auto;
   margin-top: unset;
+  @include tablet {
+    height: 450px;
+    background-position: 150% 50%;
+    background-size: 21rem;
+  }
 }
 
 #xx99-mark-one-headphones.firstImg {
@@ -296,6 +346,11 @@
   background-size: 20rem;
   border-radius: 12px;
   margin: 0 auto;
+  @include tablet {
+    width: 200px;
+    height: 350px;
+    background-size: 40rem;
+  }
 }
 
 #xx99-mark-one-headphones.secondOption {
@@ -308,6 +363,11 @@
   background-size: 20rem;
   border-radius: 12px;
   margin: 0 auto;
+  @include tablet {
+    width: 200px;
+    height: 350px;
+    background-size: 40rem;
+  }
 }
 
 #zx9-speaker.firstImg {
@@ -359,6 +419,11 @@
   background-size: 20rem;
   border-radius: 12px;
   margin: 0 auto;
+  @include tablet {
+    width: 200px;
+    height: 350px;
+    background-size: 40rem;
+  }
 }
 
 #zx7-speaker.firstImg {
@@ -410,6 +475,11 @@
   background-size: 20rem;
   border-radius: 12px;
   margin: 0 auto;
+  @include tablet {
+    width: 200px;
+    height: 350px;
+    background-size: 40rem;
+  }
 }
 
 #xx59-headphones.thirdOption {
@@ -422,4 +492,9 @@
   background-size: 20rem;
   border-radius: 12px;
   margin: 0 auto;
+  @include tablet {
+    width: 200px;
+    height: 350px;
+    background-size: 35rem;
+  }
 }

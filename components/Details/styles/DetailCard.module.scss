@@ -46,6 +46,9 @@
   flex-direction: column;
   height: 600px;
   justify-content: space-around;
+  @include tablet {
+    height: 375px;
+  }
 }
 
 .featuresBox h2 {
@@ -61,6 +64,9 @@
   font-family: $manrope;
   font-weight: $fontreg;
   font-size: 15px;
+  @include tablet {
+    width: 689px;
+  }
 }
 
 .inTheBox {
@@ -70,6 +76,13 @@
   flex-direction: column;
   align-items: baseline;
   justify-content: space-evenly;
+  @include tablet {
+    width: 689px;
+    align-items: unset;
+    justify-content: unset;
+    flex-direction: unset;
+    justify-content: space-between;
+  }
 }
 
 .inTheBox h2 {
@@ -77,6 +90,15 @@
   font-weight: $fontbold;
   font-size: 24px;
   text-transform: uppercase;
+}
+
+.imgBox {
+  display: flex;
+}
+
+.imgBoxTablet {
+  display: flex;
+  flex-direction: column;
 }
 
 .productBox {
@@ -141,10 +163,18 @@
   justify-content: space-between;
 }
 
-
 .mayLikeBox {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.mayLikeBox ul {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    width: 689px;
+    margin-top: 2rem;
+  }
 }

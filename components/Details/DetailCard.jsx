@@ -68,8 +68,10 @@ const DetailCard = (props) => {
         </ul>
       </div>
       <div className={styles.imgBox}>
-        <div id={props.slug} className="firstImg" />
-        <div id={props.slug} className="secondImg" />
+        <div className={styles.imgBoxTablet}>
+          <div id={props.slug} className="firstImg" />
+          <div id={props.slug} className="secondImg" />
+        </div>
         <div id={props.slug} className="thirdImg" />
       </div>
       <div className={styles.mayLikeBox}>
