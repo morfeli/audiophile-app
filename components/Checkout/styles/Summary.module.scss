@@ -12,6 +12,9 @@
   margin-bottom: 1rem;
   height: 400px;
   border-radius: 12px;
+  @include tablet {
+    width: 689px;
+  }
 }
 
 .section h1 {
@@ -37,6 +40,9 @@
   justify-content: space-between;
   margin: 0 auto;
   margin-bottom: 0.5rem;
+  @include tablet {
+    width: 500px;
+  }
 }
 
 .innerDiv h2 {
@@ -60,6 +66,9 @@
   width: 300px;
   margin: 0 auto;
   margin-top: 3rem;
+  @include tablet {
+    width: 500px;
+  }
 }
 
 .totalDiv h2 {

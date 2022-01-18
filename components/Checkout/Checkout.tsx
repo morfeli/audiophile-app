@@ -232,61 +232,64 @@ const Checkout = () => {
           <form className={styles.form} onSubmit={submitFormHandler}>
             <div className={styles.formDivOne}>
               <h3>Billing Details</h3>
-              <div className={styles.innerDiv}>
-                <label htmlFor="name">
-                  Name
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="First Name"
-                    onChange={(e) => {
-                      setForm((current) => ({
-                        ...current,
-                        name: e.target.value,
-                        touched: {
-                          ...current.touched,
-                          name: true,
-                        },
-                      }));
-                    }}
-                    className={clsx({
-                      control:
-                        form.validity.name ||
-                        (!form.validity.name && form.touched.name),
-                      invalid: !form.validity.name && !form.touched.name,
-                    })}
-                    value={form.name}
-                  />
-                </label>
-              </div>
-              <div className={styles.innerDiv}>
-                <label htmlFor="address">
-                  Email Address
-                  <input
-                    type="text"
-                    id="address"
-                    name="address"
-                    placeholder="Email Address"
-                    onChange={(e) => {
-                      setForm((current) => ({
-                        ...current,
-                        email: e.target.value,
-                        touched: {
-                          ...current.touched,
-                          email: true,
-                        },
-                      }));
-                    }}
-                    className={clsx({
-                      control:
-                        form.validity.address ||
-                        (!form.validity.address && form.touched.address),
-                      invalid: !form.validity.address && !form.touched.address,
-                    })}
-                    value={form.email}
-                  />
-                </label>
+              <div className={styles.tabletBox}>
+                <div className={styles.innerDiv}>
+                  <label htmlFor="name">
+                    Name
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="First Name"
+                      onChange={(e) => {
+                        setForm((current) => ({
+                          ...current,
+                          name: e.target.value,
+                          touched: {
+                            ...current.touched,
+                            name: true,
+                          },
+                        }));
+                      }}
+                      className={clsx({
+                        control:
+                          form.validity.name ||
+                          (!form.validity.name && form.touched.name),
+                        invalid: !form.validity.name && !form.touched.name,
+                      })}
+                      value={form.name}
+                    />
+                  </label>
+                </div>
+                <div className={styles.innerDiv}>
+                  <label htmlFor="address">
+                    Email Address
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      placeholder="Email Address"
+                      onChange={(e) => {
+                        setForm((current) => ({
+                          ...current,
+                          email: e.target.value,
+                          touched: {
+                            ...current.touched,
+                            email: true,
+                          },
+                        }));
+                      }}
+                      className={clsx({
+                        control:
+                          form.validity.address ||
+                          (!form.validity.address && form.touched.address),
+                        invalid:
+                          !form.validity.address && !form.touched.address,
+                      })}
+                      value={form.email}
+                    />
+                  </label>
+                </div>
               </div>
               <div className={styles.innerDiv}>
                 <label htmlFor="phoneNumber">
@@ -347,61 +350,64 @@ const Checkout = () => {
                   />
                 </label>
               </div>
-              <div className={styles.innerDiv}>
-                <label htmlFor="zippy">
-                  Zip Code
-                  <input
-                    type="text"
-                    id="zippy"
-                    name="zippy"
-                    placeholder="Zip Code"
-                    onChange={(e) => {
-                      setForm((current) => ({
-                        ...current,
-                        zipCode: e.target.value,
-                        touched: {
-                          ...current.touched,
-                          zipCode: true,
-                        },
-                      }));
-                    }}
-                    className={clsx({
-                      control:
-                        form.validity.zipCode ||
-                        (!form.validity.zipCode && form.touched.zipCode),
-                      invalid: !form.validity.zipCode && !form.touched.zipCode,
-                    })}
-                    value={form.zipCode}
-                  />
-                </label>
-              </div>
-              <div className={styles.innerDiv}>
-                <label htmlFor="city">
-                  City
-                  <input
-                    type="text"
-                    id="city"
-                    name="city"
-                    placeholder="City"
-                    onChange={(e) => {
-                      setForm((current) => ({
-                        ...current,
-                        city: e.target.value,
-                        touched: {
-                          ...current.touched,
-                          city: true,
-                        },
-                      }));
-                    }}
-                    className={clsx({
-                      control:
-                        form.validity.city ||
-                        (!form.validity.city && form.touched.city),
-                      invalid: !form.validity.city && !form.touched.city,
-                    })}
-                    value={form.city}
-                  />
-                </label>
+              <div className={styles.tabletBox}>
+                <div className={styles.innerDiv}>
+                  <label htmlFor="zippy">
+                    Zip Code
+                    <input
+                      type="text"
+                      id="zippy"
+                      name="zippy"
+                      placeholder="Zip Code"
+                      onChange={(e) => {
+                        setForm((current) => ({
+                          ...current,
+                          zipCode: e.target.value,
+                          touched: {
+                            ...current.touched,
+                            zipCode: true,
+                          },
+                        }));
+                      }}
+                      className={clsx({
+                        control:
+                          form.validity.zipCode ||
+                          (!form.validity.zipCode && form.touched.zipCode),
+                        invalid:
+                          !form.validity.zipCode && !form.touched.zipCode,
+                      })}
+                      value={form.zipCode}
+                    />
+                  </label>
+                </div>
+                <div className={styles.innerDiv}>
+                  <label htmlFor="city">
+                    City
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      placeholder="City"
+                      onChange={(e) => {
+                        setForm((current) => ({
+                          ...current,
+                          city: e.target.value,
+                          touched: {
+                            ...current.touched,
+                            city: true,
+                          },
+                        }));
+                      }}
+                      className={clsx({
+                        control:
+                          form.validity.city ||
+                          (!form.validity.city && form.touched.city),
+                        invalid: !form.validity.city && !form.touched.city,
+                      })}
+                      value={form.city}
+                    />
+                  </label>
+                </div>
               </div>
               <div className={styles.innerDiv}>
                 <label htmlFor="country">
@@ -433,55 +439,59 @@ const Checkout = () => {
               </div>
             </div>
             <div className={styles.formDivThree}>
-              <h3>Payment Details</h3>
-              <h4>Payment Method</h4>
-              <div className={styles.radioDiv}>
-                <label htmlFor="e-money">
-                  <input
-                    type="radio"
-                    id="e-money"
-                    name="payment"
-                    value="e-Money"
-                    placeholder="e-Money"
-                    onChange={(e) => {
-                      setForm((current) => ({
-                        ...current,
-                        payment: e.target.value,
-                        touched: {
-                          ...current.touched,
-                          payment: true,
-                        },
-                      }));
-                      setMoney(true);
-                      setCash(false);
-                    }}
-                  />
-                  e-Money
-                </label>
+              <div>
+                <h3>Payment Details</h3>
+                <h4>Payment Method</h4>
               </div>
-              <div className={styles.radioDiv}>
-                <label htmlFor="cash">
-                  <input
-                    type="radio"
-                    id="cash"
-                    name="payment"
-                    value="Cash"
-                    placeholder="Cash on Delivery"
-                    onChange={(e) => {
-                      setForm((current) => ({
-                        ...current,
-                        payment: e.target.value,
-                        touched: {
-                          ...current.touched,
-                          payment: true,
-                        },
-                      }));
-                      setMoney(false);
-                      setCash(true);
-                    }}
-                  />
-                  Cash on Delivery
-                </label>
+              <div>
+                <div className={styles.radioDiv}>
+                  <label htmlFor="e-money">
+                    <input
+                      type="radio"
+                      id="e-money"
+                      name="payment"
+                      value="e-Money"
+                      placeholder="e-Money"
+                      onChange={(e) => {
+                        setForm((current) => ({
+                          ...current,
+                          payment: e.target.value,
+                          touched: {
+                            ...current.touched,
+                            payment: true,
+                          },
+                        }));
+                        setMoney(true);
+                        setCash(false);
+                      }}
+                    />
+                    e-Money
+                  </label>
+                </div>
+                <div className={styles.radioDiv}>
+                  <label htmlFor="cash">
+                    <input
+                      type="radio"
+                      id="cash"
+                      name="payment"
+                      value="Cash"
+                      placeholder="Cash on Delivery"
+                      onChange={(e) => {
+                        setForm((current) => ({
+                          ...current,
+                          payment: e.target.value,
+                          touched: {
+                            ...current.touched,
+                            payment: true,
+                          },
+                        }));
+                        setMoney(false);
+                        setCash(true);
+                      }}
+                    />
+                    Cash on Delivery
+                  </label>
+                </div>
               </div>
             </div>
             {eMoney && eMoneyIsSelected}

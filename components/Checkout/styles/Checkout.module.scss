@@ -29,6 +29,9 @@
   background-color: white;
   position: relative;
   border-radius: 12px;
+  @include tablet {
+    width: 689px;
+  }
 }
 
 .formBox h1 {
@@ -87,6 +90,11 @@
   height: 200px;
   justify-content: space-around;
   margin: 0 auto;
+  @include tablet {
+    width: 689px;
+    justify-content: space-around;
+    flex-direction: row;
+  }
 }
 
 .formDivThree h4 {
@@ -148,6 +156,9 @@
   position: relative;
   top: 400px;
   cursor: pointer;
+  @include tablet {
+    width: 500px;
+  }
 }
 
 .eMoneyDiv {
@@ -164,4 +175,12 @@
   width: 280px;
   height: 56px;
   border-radius: 8px;
+}
+
+.tabletBox {
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
