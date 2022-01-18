@@ -25,6 +25,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include tablet {
+    width: 377px;
+    top: 12vh;
+    left: 45%;
+  }
 }
 
 .div1 {
