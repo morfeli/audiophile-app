@@ -28,7 +28,7 @@
     background-size: 33rem;
   }
   @include desktop {
-    width: 700px;
+    width: 500px;
     height: 600px;
     background-position: 50% 46%;
     background-size: 36rem;
@@ -52,7 +52,7 @@
     background-size: 33rem;
   }
   @include desktop {
-    width: 700px;
+    width: 500px;
     height: 600px;
     background-position: 50% 46%;
     background-size: 36rem;
@@ -76,7 +76,7 @@
     background-size: 33rem;
   }
   @include desktop {
-    width: 700px;
+    width: 500px;
     height: 600px;
     background-position: 50% 46%;
     background-size: 36rem;
@@ -100,7 +100,7 @@
     background-size: 33rem;
   }
   @include desktop {
-    width: 700px;
+    width: 500px;
     height: 600px;
     background-position: 50% 46%;
     background-size: 36rem;
@@ -124,7 +124,7 @@
     background-size: 33rem;
   }
   @include desktop {
-    width: 700px;
+    width: 500px;
     height: 600px;
     background-position: 50% 46%;
     background-size: 36rem;
@@ -148,7 +148,7 @@
     background-size: 33rem;
   }
   @include desktop {
-    width: 700px;
+    width: 500px;
     height: 600px;
     background-position: 50% 46%;
     background-size: 36rem;
@@ -460,6 +460,9 @@
   border-radius: 12px;
   margin: 0 auto;
   margin-top: 2rem;
+  @include desktop {
+    background-image: url("../assets/product-zx9-speaker/desktop/image-gallery-1.jpg");
+  }
 }
 
 #zx7-speaker.secondImg {

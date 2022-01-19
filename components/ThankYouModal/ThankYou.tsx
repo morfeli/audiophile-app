@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import ReactDOM from "react-dom";
 
@@ -9,6 +10,11 @@ import ThankYouItems from "./ThankYouItems";
 const ThankYou = ({ show }) => {
   const [sendPortal, setSendPortal] = useState(false);
   const storeCtx = useContext(CartContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    setSendPortal(true);
+  }, []);
 
   let totalAmount = `${storeCtx.totalAmount}`;
   let vatAmount = +totalAmount * 0.2;
@@ -26,7 +32,7 @@ const ThankYou = ({ show }) => {
 
   let updatedItemAmount = itemAmount - 1;
 
-  let cartItems = (
+  let cartItems = storeItemsArray ? (
     <ul>
       {newArr.map((item) => (
         <ThankYouItems
@@ -38,7 +44,7 @@ const ThankYou = ({ show }) => {
         />
       ))}
     </ul>
-  );
+  ) : null;
 
   let thankYouModal = show ? (
     <div className={styles.overlay}>
@@ -70,10 +76,6 @@ const ThankYou = ({ show }) => {
       </div>
     </div>
   ) : null;
-
-  useEffect(() => {
-    setSendPortal(true);
-  }, []);
 
   if (sendPortal) {
     return ReactDOM.createPortal(

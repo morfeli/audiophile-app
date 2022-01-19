@@ -37,6 +37,12 @@ const Cart = ({ show, onCloseModal }) => {
 
   useEffect(() => {
     setSendPortal(true);
+    let itemData = localStorage.getItem("Items");
+    if (!itemData) {
+      console.log("not working");
+    } else {
+      console.log("working");
+    }
   }, []);
 
   const cartItems = (

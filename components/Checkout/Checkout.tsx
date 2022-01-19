@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import Link from "next/link";
+import React, { useState, useEffect, useContext } from "react";
+import CartContext from "../../store/cart-context";
 import clsx from "classnames";
 
 import Summary from "./Summary";
@@ -102,6 +104,7 @@ const Checkout = () => {
   const [confirmation, setConfirmation] = useState(false);
 
   const router = useRouter();
+  const storeCtx = useContext(CartContext);
 
   const goBackHandler = () => {
     router.back();

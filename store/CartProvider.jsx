@@ -30,6 +30,9 @@ const reducerFN = (state, action) => {
       updatedItems = state.items.concat(action.item);
     }
 
+    localStorage.setItem("Items", JSON.stringify(updatedItems));
+    localStorage.setItem("Total Amount", JSON.stringify(updatedTotalAmount));
+
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
@@ -50,6 +53,9 @@ const reducerFN = (state, action) => {
       updatedItems = [...state.items];
       updatedItems[existingCartItemIndex] = updatedItem;
     }
+
+    localStorage.removeItem("Items", updatedItems);
+
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
@@ -57,6 +63,7 @@ const reducerFN = (state, action) => {
   }
 
   if (action.type === "CLEAR") {
+    localStorage.removeItem("Items");
     return initialCartState;
   }
 

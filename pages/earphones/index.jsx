@@ -14,7 +14,7 @@ const EarphonesPage = (props) => {
     <Fragment>
       <Header />
       <Earphones />
-      <ul>
+      <ul className="productsUl">
         {products.map((item) => (
           <EarphoneCards
             key={item.id}

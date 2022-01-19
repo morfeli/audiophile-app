@@ -14,7 +14,7 @@ const SpeakersPage = (props) => {
     <Fragment>
       <Header />
       <Speakers />
-      <ul>
+      <ul className="productsUl">
         {products.map((item) => (
           <SpeakerCards
             key={item.id}
