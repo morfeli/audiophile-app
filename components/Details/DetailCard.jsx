@@ -10,7 +10,7 @@ import MinusIcon from "./MinusSVG";
 import PlusSVG from "./PlusSVG";
 
 const DetailCard = (props) => {
-  const cartCtx = useContext(CartContext);
+  const cart = useContext(CartContext);
   const router = useRouter();
   const [amount, setAmount] = useState(1);
   const { includes, others } = props;
@@ -24,7 +24,7 @@ const DetailCard = (props) => {
   };
 
   const addToCartHandler = () => {
-    cartCtx.addItemToCart({
+    cart.add({
       id: props.slug,
       slug: props.slug,
       name: props.name,

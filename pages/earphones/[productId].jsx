@@ -9,7 +9,6 @@ import DetailCard from "../../components/Details/DetailCard";
 
 const EarphoneProductDetailsPage = (props) => {
   const { loadedProduct } = props;
-  console.log(loadedProduct);
 
   return (
     <Fragment>

@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import nookies from "nookies";
+import { parseCookies } from "nookies";
 import styles from "./styles/CartIcon.module.scss";
 
 import Cart from "../Cart/Cart";
 
 function CartIcon() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(null);
 
   const setShowModalHandler = () => {
-    setShow((current) => !current);
+    setShow(true);
   };
 
   const closeModalHandler = () => {

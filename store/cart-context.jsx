@@ -9,4 +9,5 @@ const CartContext = createContext({
 });
 
 export default CartContext;
+
 // First we need to set our Cart Context logic. In here we are importing createContext and setting its methods.

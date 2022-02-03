@@ -9,27 +9,10 @@ import styles from "./styles/CartModal.module.scss";
 
 const Cart = ({ show, onCloseModal }) => {
   const [sendPortal, setSendPortal] = useState(false);
+
   const router = useRouter();
 
-  const storeCtx = useContext(CartContext);
-
-  let totalAmount = `$${storeCtx.totalAmount.toFixed(2)}`;
-
-  let itemsLength = storeCtx.items.reduce((curNumber, item) => {
-    return curNumber + item.amount;
-  }, 0);
-
-  const cartItemRemoveHandler = (id) => {
-    storeCtx.removeItemFromCart(id);
-  };
-
-  const cartItemAddHandler = (item) => {
-    storeCtx.addItemToCart({ ...item, amount: 1 });
-  };
-
-  const clearCartHandler = () => {
-    storeCtx.clearCart();
-  };
+  const cart = useContext(CartContext);
 
   const routeToCheckOutHandler = () => {
     router.replace("/checkout");
@@ -37,53 +20,49 @@ const Cart = ({ show, onCloseModal }) => {
 
   useEffect(() => {
     setSendPortal(true);
-    let itemData = localStorage.getItem("Items");
-    if (!itemData) {
-      console.log("not working");
-    } else {
-      console.log("working");
-    }
   }, []);
-
-  const cartItems = (
-    <ul>
-      {storeCtx.items.map((item) => (
-        <CartItem
-          key={item.slug}
-          name={item.name}
-          price={item.price}
-          amount={item.amount}
-          slug={item.slug}
-          onRemove={cartItemRemoveHandler.bind(null, item.id)}
-          onAdd={cartItemAddHandler.bind(null, item)}
-        />
-      ))}
-    </ul>
-  );
-
-  const checkoutBtn =
-    storeCtx.items.length > 0 ? (
-      <button onClick={routeToCheckOutHandler} className={styles.checkoutBtn}>
-        CHECKOUT
-      </button>
-    ) : null;
 
   let modalContent = show ? (
     <div className={styles.overlay}>
       <div className={styles.modal}>
         <div className={styles.div1}>
           <h1>
-            CART <span>({itemsLength})</span>
+            CART <span>({cart.totalItems})</span>
           </h1>
-          <button onClick={clearCartHandler}>Remove All</button>
+          <button onClick={cart.clear}>Remove All</button>
         </div>
-        <div>{cartItems}</div>
+        <div>
+          {cart.items.length ? (
+            <ul>
+              {cart.items.map((item) => (
+                <CartItem
+                  key={item.slug}
+                  name={item.name}
+                  price={item.price}
+                  amount={item.amount}
+                  slug={item.slug}
+                  onRemove={() => cart.remove(item.id)}
+                  onAdd={() => cart.add(item)}
+                />
+              ))}
+            </ul>
+          ) : (
+            <p>No items in cart.</p>
+          )}
+        </div>
         <div className={styles.div3}>
           <h4>TOTAL</h4>
-          <span>{totalAmount}</span>
+          <span>{`$${cart.totalPrice.toFixed(2)}`}</span>
         </div>
         <div className={styles.btnBox}>
-          {checkoutBtn}
+          {cart.items.length ? (
+            <button
+              onClick={routeToCheckOutHandler}
+              className={styles.checkoutBtn}
+            >
+              CHECKOUT
+            </button>
+          ) : null}
           <button className={styles.closeBtn} onClick={onCloseModal}>
             CLOSE
           </button>
