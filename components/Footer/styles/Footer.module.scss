@@ -67,7 +67,7 @@
   bottom: 40px;
   border: none;
   @include tablet {
-    bottom: 50px;
+    bottom: 30px;
     right: 290px;
   }
   @include desktop {
@@ -78,9 +78,9 @@
 
 .iconBox {
   @include tablet {
-    position: absolute;
-    bottom: 50px;
-    left: 600px;
+    position: relative;
+    bottom: 5px;
+    left: 300px;
   }
 }
 

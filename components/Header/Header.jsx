@@ -8,7 +8,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <MobileMenuBtn />
+
       <Logo />
+
       <CartIcon />
     </header>
   );

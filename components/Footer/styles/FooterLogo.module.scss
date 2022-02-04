@@ -2,9 +2,9 @@
 
 .footerLogo {
   @include tablet {
-    position: absolute;
-    top: 50px;
-    left: 45px;
+    position: relative;
+    right: 265px;
+    bottom: 25px;
   }
   @include desktop {
     left: 75px;
