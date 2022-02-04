@@ -1,39 +1,38 @@
 import { useContext, useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import CartContext from "../../store/cart-context";
 import Link from "next/link";
 import ReactDOM from "react-dom";
 
-import CartContext from "../../store/cart-context";
-import styles from "./styles/ThankYou.module.scss";
 import ThankYouItems from "./ThankYouItems";
+
+import styles from "./styles/ThankYou.module.scss";
 
 const ThankYou = ({ show }) => {
   const [sendPortal, setSendPortal] = useState(false);
-  const storeCtx = useContext(CartContext);
-  const router = useRouter();
+
+  const cart = useContext(CartContext);
+
+  let shippingCost = 50;
+
+  let vat = cart.totalPrice * 0.2;
+
+  let grandTotal = cart.totalPrice + shippingCost;
 
   useEffect(() => {
     setSendPortal(true);
   }, []);
 
-  let totalAmount = `${storeCtx.totalAmount}`;
-  let vatAmount = +totalAmount * 0.2;
-  let shippingCost = 50;
-
-  let grandTotal = +totalAmount + shippingCost + vatAmount;
-  let updatedGrandTotal = grandTotal.toFixed(2);
-
-  let storeItemsArray = storeCtx.items;
+  let storeItemsArray = cart.items;
   let firstItem = storeItemsArray[0];
   let newArr = [];
   newArr.push(firstItem);
 
-  let itemAmount = storeCtx.items.length;
+  let itemAmount = cart.items.length;
 
   let updatedItemAmount = itemAmount - 1;
 
   let cartItems = storeItemsArray ? (
-    <ul>
+    <ul style={{ marginBottom: "1rem" }}>
       {newArr.map((item) => (
         <ThankYouItems
           key={item.slug}
@@ -63,11 +62,15 @@ const ThankYou = ({ show }) => {
               <p style={{ textAlign: "center", marginTop: "1rem" }}>
                 and <span>{updatedItemAmount}</span> other item(s)
               </p>
-            ) : null}
+            ) : (
+              <p style={{ textAlign: "center", marginTop: "0.5rem" }}>
+                New gear coming your way!
+              </p>
+            )}
           </div>
           <div className={styles.grandTotal}>
             <h2>Grand Total</h2>
-            <p>${updatedGrandTotal}</p>
+            <p>${(grandTotal + vat).toFixed(2)}</p>
           </div>
         </div>
         <Link href="/">

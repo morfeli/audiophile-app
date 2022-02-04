@@ -54,13 +54,6 @@ const DetailCard = (props) => {
             <button className={styles.addToCart} onClick={addToCartHandler}>
               Add to cart
             </button>
-            <button
-              onClick={() => {
-                localStorage.clear();
-              }}
-            >
-              clear
-            </button>
           </div>
         </div>
       </div>

@@ -5,21 +5,17 @@ import styles from "./styles/Summary.module.scss";
 import SummaryList from "../../components/Checkout/SummaryList";
 
 const Summary = () => {
-  const storeCtx = useContext(CartContext);
-
-  let totalAmount = `${storeCtx.totalAmount}`;
-
-  let vatAmount = +totalAmount * 0.2;
-  let updatedVAT = vatAmount.toFixed(2);
+  const cart = useContext(CartContext);
 
   let shippingCost = 50;
 
-  let grandTotal = +totalAmount + shippingCost + vatAmount;
-  let updatedGrandTotal = grandTotal.toFixed(2);
+  let vat = cart.totalPrice * 0.2;
+
+  let grandTotal = cart.totalPrice + shippingCost;
 
   const cartItems = (
     <ul className={styles.ul}>
-      {storeCtx.items.map((item) => (
+      {cart.items.map((item) => (
         <SummaryList
           key={item.slug}
           name={item.name}
@@ -38,19 +34,19 @@ const Summary = () => {
       <div className={styles.outerDiv}>
         <div className={styles.innerDiv}>
           <h2>Total</h2>
-          <span>${totalAmount}</span>
+          <span>${cart.totalPrice.toFixed(2)}</span>
         </div>
         <div className={styles.innerDiv}>
           <h2>Shipping</h2>
-          <span>${shippingCost}</span>
+          <span>${shippingCost.toFixed(2)}</span>
         </div>
         <div className={styles.innerDiv}>
           <h2>VAT 20% (Included)</h2>
-          <span>${updatedVAT}</span>
+          <span>${vat.toFixed(2)}</span>
         </div>
         <div className={styles.totalDiv}>
           <h2>Grand Total</h2>
-          <span>${updatedGrandTotal}</span>
+          <span>${(grandTotal + vat).toFixed(2)}</span>
         </div>
       </div>
     </section>
