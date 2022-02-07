@@ -8,6 +8,12 @@
 
 @media (min-width: 768px) {
   .logo {
-    left: 150px;
+    left: 20%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .logo {
+    left: unset;
   }
 }

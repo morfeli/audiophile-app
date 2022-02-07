@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import nookies from "nookies";
-import { parseCookies } from "nookies";
+import { useState } from "react";
 import styles from "./styles/CartIcon.module.scss";
 
 import Cart from "../Cart/Cart";

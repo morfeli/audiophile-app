@@ -9,7 +9,6 @@ import EarphoneHero from "../components/HeroFolder/EarphoneHero";
 import BestHero from "../components/HeroFolder/BestHero";
 import Cart from "../components/Cart/Cart";
 import Footer from "../components/Footer/Footer";
-import { parseCookies } from "../components/helper/ParseReq";
 
 export default function Home() {
   return (

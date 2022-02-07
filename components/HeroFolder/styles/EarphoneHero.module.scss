@@ -15,8 +15,8 @@
     background-image: url("../../../assets/product-yx1-earphones/mobile/image-gallery-2.jpg");
     background-repeat: no-repeat;
     background-position: 40% center;
-    background-size: 30rem;
-    border-radius: 25px;
+
+    border-radius: 15px;
   }
   @include desktop {
     background-image: url("../../../assets/product-yx1-earphones/desktop/image-gallery-2.jpg");
@@ -26,13 +26,14 @@
 .divTwo {
   margin-top: 2rem;
   border-radius: 25px;
-  width: 327px;
+  width: 340px;
   height: 200px;
   background-color: $gray;
   display: flex;
   flex-direction: column;
   align-items: baseline;
   justify-content: space-evenly;
+  border-radius: 15px;
 }
 
 .divTwo h1 {
@@ -75,13 +76,11 @@
   .divOne {
     width: 330px;
     height: 300px;
-    border-radius: unset;
   }
 
   .divTwo {
     width: 330px;
-    height: 256px;
-    border-radius: unset;
+    height: 300px;
     margin-top: unset;
   }
 }

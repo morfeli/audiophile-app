@@ -71,8 +71,8 @@
     right: 290px;
   }
   @include desktop {
-    bottom: 33px;
-    right: 600px;
+    bottom: 25px;
+    right: 590px;
   }
 }
 
@@ -101,5 +101,6 @@
 
   .iconBox {
     position: relative;
+    left: 600px;
   }
 }

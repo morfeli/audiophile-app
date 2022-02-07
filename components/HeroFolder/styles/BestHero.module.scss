@@ -22,6 +22,7 @@
 .imgBoxTablet {
   display: none;
   @include tablet {
+    border-radius: 15px;
     display: flex;
     width: 689px;
   }
@@ -34,6 +35,7 @@
   display: none;
   @include desktop {
     display: flex;
+    border-radius: 15px;
     width: 500px;
     height: 500px;
     border-radius: 15px;
@@ -41,6 +43,7 @@
 }
 
 .img {
+  border-radius: 15px;
   @include tablet {
     width: 669px;
   }

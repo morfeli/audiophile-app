@@ -197,13 +197,17 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  @include tablet {
+    width: 500px;
+    margin: 0 auto;
+  }
 }
 
 .mayLikeBox ul {
   @include tablet {
     display: flex;
     justify-content: space-between;
-    width: 750px;
+    width: 85vw;
     margin-top: 2rem;
   }
 }

@@ -6,12 +6,15 @@
   background-position: center;
   background-size: cover;
   width: 100vw;
+  background-color: $black;
   height: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   margin: 0 auto;
+  @include tablet {
+  }
 }
 
 .heroHome div {

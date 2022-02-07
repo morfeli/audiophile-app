@@ -1,8 +1,19 @@
+@import "../../../styles/partials";
+
 .logo {
   position: relative;
   bottom: 5px;
   left: 10px;
   z-index: 100;
+  cursor: pointer;
+}
+
+.logo path {
+  transition: all ease-in-out 0.2s;
+}
+
+.logo path:hover {
+  fill: $darkorange;
 }
 
 @media (min-width: 768px) {
