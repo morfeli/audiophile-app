@@ -3,29 +3,43 @@
 .heroHome {
   background-image: url("../../../assets/home/mobile/image-header.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 50% 75%;
   background-size: cover;
   width: 100vw;
   background-color: $black;
-  height: 450px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   margin: 0 auto;
   @include tablet {
+    background-image: url("../../../assets/home/tablet/image-header.jpg");
+  }
+  @include desktop {
+    background-image: url("../../../assets/home/desktop/image-hero.jpg");
+    align-items: baseline;
   }
 }
 
-.heroHome div {
+// .imgBox {
+//   position: relative;
+//   width: 100vw;
+//   height: 80vh;
+// }
+
+.textBox {
   height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   margin: 0 auto;
-  margin-top: 6rem;
   text-align: center;
+  position: absolute;
+  @include desktop {
+    left: 100px;
+  }
 }
 
 .heroHome h2 {
@@ -42,6 +56,10 @@
   font-weight: $fontbold;
   font-size: 36px;
   color: white;
+  @include tablet {
+    font-size: 56px;
+    width: 396px;
+  }
 }
 
 .heroHome p {
@@ -51,6 +69,9 @@
   line-height: 25px;
   color: $lightgray;
   width: 328px;
+  @include tablet {
+    width: 375px;
+  }
 }
 
 .heroHome button {

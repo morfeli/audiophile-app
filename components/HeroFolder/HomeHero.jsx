@@ -1,12 +1,9 @@
 import styles from "./styles/HomeHero.module.scss";
 
-import Image from "next/image";
-import imgHero from "../../assets/home/mobile/image-header.jpg";
-
 const HomeHero = () => {
   return (
     <section className={styles.heroHome}>
-      <div>
+      <div className={styles.textBox}>
         <h2>New Product</h2>
         <h1>XX99 MARK II HEADPHONES</h1>
         <p>
