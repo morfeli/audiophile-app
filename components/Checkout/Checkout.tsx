@@ -446,7 +446,7 @@ const Checkout = () => {
                 <h3>Payment Details</h3>
                 <h4>Payment Method</h4>
               </div>
-              <div>
+              <div className={styles.paymentBox}>
                 <div className={styles.radioDiv}>
                   <label htmlFor="e-money">
                     <input

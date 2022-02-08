@@ -1,6 +1,6 @@
 import styles from "./styles/ThankYouItems.module.scss";
 
-const ThankYouItems = ({ name, price, amount, id }) => {
+const ThankYouItems = ({ name, price, amount }) => {
   return (
     <li className={styles.li}>
       <div>

@@ -1,12 +1,21 @@
+import { useRouter } from "next/router";
+
 import styles from "./styles/FooterLogo.module.scss";
 
 function FooterLogo() {
+  const router = useRouter();
+
+  const onClick = () => {
+    router.push("/");
+  };
+
   return (
     <svg
       className={styles.footerLogo}
       xmlns="http://www.w3.org/2000/svg"
       width="143"
       height="25"
+      onClick={onClick}
     >
       <path
         fill="#FFF"

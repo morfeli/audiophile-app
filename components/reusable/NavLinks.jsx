@@ -1,9 +1,16 @@
 import Link from "next/link";
-import styles from "./styles/NavLinks.module.scss";
 
-const NavLinks = () => {
+const NavLinks = ({ open }) => {
+  let navClasses = "navigation-bar";
+
+  if (open) {
+    navClasses = "navigation-bar open";
+  } else {
+    navClasses = "navigation-bar";
+  }
+
   return (
-    <nav className={styles.nav}>
+    <nav className={navClasses}>
       <ul>
         <Link href="/">
           <li>Home</li>

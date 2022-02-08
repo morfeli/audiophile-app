@@ -4,7 +4,6 @@ import Link from "next/link";
 import ReactDOM from "react-dom";
 
 import ThankYouItems from "./ThankYouItems";
-
 import styles from "./styles/ThankYou.module.scss";
 
 const ThankYou = ({ show }) => {
@@ -22,8 +21,7 @@ const ThankYou = ({ show }) => {
     setSendPortal(true);
   }, []);
 
-  let storeItemsArray = cart.items;
-  let firstItem = storeItemsArray[0];
+  let firstItem = cart.items[0];
   let newArr = [];
   newArr.push(firstItem);
 
@@ -31,7 +29,7 @@ const ThankYou = ({ show }) => {
 
   let updatedItemAmount = itemAmount - 1;
 
-  let cartItems = storeItemsArray ? (
+  let cartItems = newArr ? (
     <ul style={{ marginBottom: "1rem" }}>
       {newArr.map((item) => (
         <ThankYouItems

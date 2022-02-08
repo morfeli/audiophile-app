@@ -30,7 +30,7 @@
   position: relative;
   border-radius: 12px;
   @include tablet {
-    width: 689px;
+    width: 85vw;
   }
 }
 
@@ -177,10 +177,20 @@
   border-radius: 8px;
 }
 
+.paymentBox {
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 175px;
+  }
+}
+
 .tabletBox {
   @include tablet {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 625px;
   }
 }

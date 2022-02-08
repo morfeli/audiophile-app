@@ -3,11 +3,11 @@
 .heroHome {
   background-image: url("../../../assets/home/mobile/image-header.jpg");
   background-repeat: no-repeat;
-  background-position: 50% 75%;
+  background-position: 50% 85%;
   background-size: cover;
   width: 100vw;
   background-color: $black;
-  height: 550px;
+  height: 515px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,18 +15,16 @@
   margin: 0 auto;
   @include tablet {
     background-image: url("../../../assets/home/tablet/image-header.jpg");
+    background-position: 50% 65%;
   }
   @include desktop {
     background-image: url("../../../assets/home/desktop/image-hero.jpg");
+    background-position: 50% 85%;
+    background-size: cover;
     align-items: baseline;
+    height: 600px;
   }
 }
-
-// .imgBox {
-//   position: relative;
-//   width: 100vw;
-//   height: 80vh;
-// }
 
 .textBox {
   height: 350px;
@@ -37,8 +35,11 @@
   margin: 0 auto;
   text-align: center;
   position: absolute;
+  top: 12rem;
   @include desktop {
-    left: 100px;
+    left: 85px;
+    align-items: baseline;
+    text-align: unset;
   }
 }
 

@@ -1,6 +1,7 @@
 @import "../../../styles/partials";
 
 .footerLogo {
+  cursor: pointer;
   @include tablet {
     position: relative;
     right: 265px;

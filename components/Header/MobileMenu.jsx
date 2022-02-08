@@ -12,7 +12,7 @@ const MobileMenuBtn = (props) => {
   return (
     <label className={styles.label}>
       <input type="checkbox" id="checkbox" />
-      <div className={styles.toggleButton} onClick={props.event}>
+      <div className={styles.toggleButton} onClick={props.toggle}>
         <div className={styles.top}></div>
         <div className={styles.middle}></div>
         <div className={styles.bottom}></div>
