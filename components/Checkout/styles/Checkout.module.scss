@@ -30,7 +30,7 @@
   position: relative;
   border-radius: 12px;
   @include tablet {
-    width: 85vw;
+    width: 700px;
   }
 }
 
@@ -182,7 +182,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 175px;
+    height: 140px;
   }
 }
 
@@ -191,6 +191,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 625px;
+    width: 600px;
   }
 }

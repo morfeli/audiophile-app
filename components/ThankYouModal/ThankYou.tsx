@@ -29,7 +29,7 @@ const ThankYou = ({ show }) => {
 
   let updatedItemAmount = itemAmount - 1;
 
-  let cartItems = newArr ? (
+  let cartItems = firstItem ? (
     <ul style={{ marginBottom: "1rem" }}>
       {newArr.map((item) => (
         <ThankYouItems
